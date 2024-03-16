@@ -4,8 +4,6 @@ a package or tool designed to create APIs using the Express framework in web app
 
 ![Nexpress API](https://github.com/ferlanferlani/nexpress-api/assets/87635305/eae6e6fa-8cc0-4cb7-a981-c399859565cc)
 
-##Guide
-
 To get started using this project, follow the steps below:
 
  **Clone Repository**:
