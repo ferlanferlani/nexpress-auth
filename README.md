@@ -1,5 +1,7 @@
 # Nexpress-API
 
+![Nexpress Logo](https://drive.google.com/drive/folders/1DJo5Oi-pjfcKTCjYKzNof5OjuvAGDtkk?hl=id)
+
 a package or tool designed to create APIs using the Express framework in web application development with Node.js. This emphasizes the package's focus on building APIs using Express as a backend framework.
 
 ## Guide
@@ -12,24 +14,29 @@ To get started using this project, follow the steps below:
    ```bash
    git clone https://github.com/ferlanferlani/nexpress-api.git
    ```
+
    or
+
    ```bash
    npm install nexpress-api
    ```
 
-3. **Install Dependencies**:
-  Navigate to the project directory and run the following command to install dependencies:
+2. **Install Dependencies**:
+   Navigate to the project directory and run the following command to install dependencies:
 
    ```bash
    cd nexpress-api
    ```
+
    ```bash
    npm install
    ```
-4. **Starting Application**:
-  Once the installation is complete, you can start the project by running the following command:
+
+3. **Starting Application**:
+   Once the installation is complete, you can start the project by running the following command:
 
    ```bash
    npm run nexrepss
    ```
+
    ## Happy Hacking
