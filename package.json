@@ -1,10 +1,10 @@
 {
-  "name": "expressify",
+  "name": "nexpress-api",
   "version": "1.0.0",
   "publisher": "Ferlan Ferlani",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ferlanferlani/expressify"
+    "url": "https://github.com/ferlanferlani/nexpress-api"
   },
   "keywords": [
     "express",
@@ -18,7 +18,8 @@
     "api-nodejs-starter-express",
     "api-nodejs-express-starter"
   ],
-  "description": "Expressify adalah istilah yang diambil dari kata 'Express' (yaitu framework web untuk Node.js) yang digabungkan dengan akhiran '-ify', yang sering digunakan untuk menunjukkan transformasi atau konversi sesuatu ke dalam bentuk atau format tertentu. ini mungkin menunjukkan bahwa package tersebut dirancang untuk membuat atau memperluas penggunaan framework Express dalam pengembangan aplikasi backend dengan Node.js.",
+  "homepage": "https://github.com/ferlanferlani/nexpress-api#readme",
+  "description": "sebuah paket atau alat yang dirancang untuk membuat API menggunakan framework Express dalam pengembangan aplikasi web dengan Node.js. Ini menekankan fokus paket pada pembuatan API dengan menggunakan Express sebagai framework backend",
   "main": "index.js",
   "type": "module",
   "scripts": {
