@@ -4,8 +4,7 @@ a package or tool designed to create APIs using the Express framework in web app
 
 ![Nexpress API](https://github.com/ferlanferlani/nexpress-api/assets/87635305/eae6e6fa-8cc0-4cb7-a981-c399859565cc)
 
-
- ##Guide
+##Guide
 
 To get started using this project, follow the steps below:
 
@@ -30,7 +29,7 @@ To get started using this project, follow the steps below:
     npm install
     ```
 
-    **Configure Database**:
+ **Configure Database**:
 
 Before running the application, you need to set a few things first:
 
@@ -74,5 +73,4 @@ Make sure you have set all configurations correctly before running the applicati
     ```bash
     npm run nexpress
     ```
-
-    ## Happy Hacking
+  ## Happy Hacking
