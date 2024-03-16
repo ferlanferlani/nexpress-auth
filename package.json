@@ -19,7 +19,7 @@
     "api-nodejs-express-starter"
   ],
   "homepage": "https://github.com/ferlanferlani/nexpress-api#readme",
-  "description": "sebuah paket atau alat yang dirancang untuk membuat API menggunakan framework Express dalam pengembangan aplikasi web dengan Node.js. Ini menekankan fokus paket pada pembuatan API dengan menggunakan Express sebagai framework backend",
+  "description": "a package or tool designed to create APIs using the Express framework in web application development with Node.js. This emphasizes the package's focus on building APIs using Express as a backend framework.",
   "main": "index.js",
   "type": "module",
   "scripts": {
