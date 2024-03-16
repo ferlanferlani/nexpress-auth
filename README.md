@@ -9,20 +9,20 @@ a package or tool designed to create APIs using the Express framework in web app
 
 To get started using this project, follow the steps below:
 
-1. **Clone Repository**:
+   **Clone Repository**:
    Get a copy of the project by running the following command:
 
    ```bash
    git clone https://github.com/ferlanferlani/nexpress-api.git
    ```
 
-   or
+   or you can install with npm
 
    ```bash
    npm install nexpress-api
    ```
 
-2. **Install Dependencies**:
+   **Install Dependencies**:
    Navigate to the project directory and run the following command to install dependencies:
 
    ```bash
@@ -30,8 +30,7 @@ To get started using this project, follow the steps below:
    npm install
    ```
 
-3. **Configure Database**:
-### Configure Database
+   **Configure Database**:
 
 Sebelum menjalankan aplikasi, Anda perlu mengatur beberapa hal terlebih dahulu:
 
@@ -47,7 +46,7 @@ Sebelum menjalankan aplikasi, Anda perlu mengatur beberapa hal terlebih dahulu:
     
     e. Beri nama untuk aplikasi, misalnya "Aplikasi Email ProyekX".
     
-    f. Setelah mendapatkan password aplikasi, atur di bagian file `.env` seperti ini:
+    f. Setelah mendapatkan password aplikasi, silahkan buat file atau atur di bagian file `.env` atau juga kamu bisa menduplicate `.env.local` ubah menjadi `.env` lalu isi seperti ini:
 
     ```bash
     EMAIL=youremail@gmail.com
@@ -61,7 +60,7 @@ Sebelum menjalankan aplikasi, Anda perlu mengatur beberapa hal terlebih dahulu:
     DATABASE_URL=youconnectionstring
     ```
     
-4. **Generate Database**: Sekarang, jalankan perintah berikut di terminal proyek Anda untuk menghasilkan database. Di sini, Prisma ORM digunakan untuk berinteraksi dengan database:
+3. **Generate Database**: Sekarang, jalankan perintah berikut di terminal proyek Anda untuk menghasilkan database. Di sini, Prisma ORM digunakan untuk berinteraksi dengan database:
 
     ```bash
     npx prisma generate
@@ -70,7 +69,7 @@ Sebelum menjalankan aplikasi, Anda perlu mengatur beberapa hal terlebih dahulu:
 Pastikan Anda telah mengatur semua konfigurasi dengan benar sebelum menjalankan aplikasi. Jika ada pertanyaan lebih lanjut, jangan ragu untuk bertanya!
 
 
-4. **Starting Application**:
+**Starting Application**:
    Once the installation is complete, you can start the project by running the following command:
 
    ```bash
