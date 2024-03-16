@@ -46,7 +46,7 @@ Sebelum menjalankan aplikasi, Anda perlu mengatur beberapa hal terlebih dahulu:
     
     e. Beri nama untuk aplikasi, misalnya "Aplikasi Email ProyekX".
     
-    f. Setelah mendapatkan password aplikasi, silahkan buat file atau atur di bagian file `.env` atau juga kamu bisa menduplicate `.env.local` ubah menjadi `.env` lalu isi seperti ini:
+    f. Setelah mendapatkan password aplikasi, silahkan buat file `.env` atau juga kamu bisa menduplicate `.env.local` ubah menjadi `.env` lalu isi seperti ini:
 
     ```bash
     EMAIL=youremail@gmail.com
@@ -54,7 +54,7 @@ Sebelum menjalankan aplikasi, Anda perlu mengatur beberapa hal terlebih dahulu:
     ```
 
 2. **MongoDB Database**: Aplikasi ini menggunakan MongoDB sebagai database-nya. Anda perlu membuat database terlebih dahulu. Anda dapat membuatnya di [MongoDB Cloud](https://cloud.mongodb.com/).
-   setelah kamu membuatnya masuk ke bagian menu databse->connect->drivers copy untuk mengambil string koneksi ke database, lalau pastekan di environment variable
+   setelah kamu membuatnya masuk ke bagian menu databse->connect->drivers copy untuk mengambil string koneksi database, lalau pastekan di environment variable
    
        ```bash
     DATABASE_URL=youconnectionstring
@@ -66,8 +66,7 @@ Sebelum menjalankan aplikasi, Anda perlu mengatur beberapa hal terlebih dahulu:
     npx prisma generate
     ```
 
-Pastikan Anda telah mengatur semua konfigurasi dengan benar sebelum menjalankan aplikasi. Jika ada pertanyaan lebih lanjut, jangan ragu untuk bertanya!
-
+Pastikan Anda telah mengatur semua konfigurasi dengan benar sebelum menjalankan aplikasi. Jika ada pertanyaan lebih lanjut, jangan ragu untuk bertanya di bagian issue!
 
 **Starting Application**:
    Once the installation is complete, you can start the project by running the following command:
