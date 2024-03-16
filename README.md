@@ -60,7 +60,7 @@ Sebelum menjalankan aplikasi, Anda perlu mengatur beberapa hal terlebih dahulu:
     DATABASE_URL=youconnectionstring
     ```
     
-3. **Generate Database**: Sekarang, jalankan perintah berikut di terminal proyek Anda untuk menghasilkan database. Di sini, Prisma ORM digunakan untuk berinteraksi dengan database:
+3. **Generate Database**: Sekarang, jalankan perintah berikut di terminal proyek Anda untuk menghasilkan database. Di sini, [Prisma ORM](https://www.prisma.io/). digunakan untuk berinteraksi dengan database:
 
     ```bash
     npx prisma generate
@@ -72,7 +72,7 @@ Pastikan Anda telah mengatur semua konfigurasi dengan benar sebelum menjalankan 
    Once the installation is complete, you can start the project by running the following command:
 
    ```bash
-   npm run nexrepss
+   npm run nexpress
    ```
 
    ## Happy Hacking
