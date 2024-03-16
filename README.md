@@ -63,7 +63,7 @@ Before running the application, you need to set a few things first:
      npx prism generate
      ```
 
-Make sure you have set all configurations correctly before running the application. If you have further questions, don't hesitate to ask in the issue section!
+Make sure you have set all configurations correctly before running the application. If you have further questions, don't hesitate to ask in the issue section or click [here!](https://github.com/ferlanferlani/nexpress-api/issues/1)
 
 **Starting Application**:
     Once the installation is complete, you can start the project by running the following command:
