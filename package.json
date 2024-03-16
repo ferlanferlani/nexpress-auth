@@ -23,7 +23,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch src/index.js"
+    "nexpress": "node --watch src/index.js"
   },
   "author": "Ferlan Ferlani",
   "license": "ISC",
