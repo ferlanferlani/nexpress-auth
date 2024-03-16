@@ -56,7 +56,7 @@ Sebelum menjalankan aplikasi, Anda perlu mengatur beberapa hal terlebih dahulu:
 2. **MongoDB Database**: Aplikasi ini menggunakan MongoDB sebagai database-nya. Anda perlu membuat database terlebih dahulu. Anda dapat membuatnya di [MongoDB Cloud](https://cloud.mongodb.com/).
    setelah kamu membuatnya masuk ke bagian menu databse->connect->drivers copy untuk mengambil string koneksi database, lalau pastekan di environment variable
    
-       ```bash
+    ```bash
     DATABASE_URL=youconnectionstring
     ```
     
