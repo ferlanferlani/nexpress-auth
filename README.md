@@ -68,7 +68,7 @@ Make sure you have set all configurations correctly before running the applicati
 **Starting Application**:
     Once the installation is complete, you can start the project by running the following command:
 
-    ```bash
+   ```bash
     npm run nexpress
-    ```
+   ```
   ## Happy Hacking
