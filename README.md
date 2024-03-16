@@ -31,11 +31,39 @@ To get started using this project, follow the steps below:
    ```
 
 3. **Configure Database**:
-   you can configure first (comming soon!):
+### Configure Database
 
-   ```bash
-   npx prisma generate
-   ```
+Sebelum menjalankan aplikasi, Anda perlu mengatur beberapa hal terlebih dahulu:
+
+1. **App Password Gmail**: Aplikasi ini menggunakan nodemailer untuk melakukan otentikasi dengan verifikasi email. Sebelumnya, pastikan untuk membuat App Password di akun Google Anda. Anda dapat melakukan hal ini dengan mengikuti langkah-langkah berikut:
+
+    a. Masuk ke [pengaturan akun Google](https://myaccount.google.com/).
+    
+    b. Pilih "Keamanan" di sisi kiri.
+    
+    c. Di bawah "Masuk ke Google", cari opsi "Password Aplikasi".
+    
+    d. Klik "Pilih aplikasi" dan pilih "Lainnya".
+    
+    e. Beri nama untuk aplikasi, misalnya "Aplikasi Email ProyekX".
+    
+    f. Setelah mendapatkan password aplikasi, atur di bagian file `.env` seperti ini:
+
+    ```bash
+    EMAIL=youremail@gmail.com
+    PASSWORD=yourpasswordapp  
+    ```
+
+2. **MongoDB Database**: Aplikasi ini menggunakan MongoDB sebagai database-nya. Anda perlu membuat database terlebih dahulu. Anda dapat membuatnya di [MongoDB Cloud](https://cloud.mongodb.com/).
+
+3. **Generate Database**: Sekarang, jalankan perintah berikut di terminal proyek Anda untuk menghasilkan database. Di sini, Prisma ORM digunakan untuk berinteraksi dengan database:
+
+    ```bash
+    npx prisma generate
+    ```
+
+Pastikan Anda telah mengatur semua konfigurasi dengan benar sebelum menjalankan aplikasi. Jika ada pertanyaan lebih lanjut, jangan ragu untuk bertanya!
+
 
 4. **Starting Application**:
    Once the installation is complete, you can start the project by running the following command:
