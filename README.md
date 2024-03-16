@@ -13,7 +13,6 @@ To get started using this project, follow the steps below:
    git clone https://github.com/ferlanferlani/nexpress-api.git
    ```
    or
-   
    ```bash
    npm install nexpress-api
    ```
@@ -23,9 +22,10 @@ To get started using this project, follow the steps below:
 
    ```bash
    cd nexpress-api
+   ```
+   ```bash
    npm install
    ```
-
 4. **Starting Application**:
   Once the installation is complete, you can start the project by running the following command:
 
