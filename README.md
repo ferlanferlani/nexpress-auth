@@ -51,7 +51,7 @@ Before running the application, you need to set a few things first:
      ```
 
 2. **MongoDB Database**: This application uses MongoDB as its database. You need to create a database first. You can create it in [MongoDB Cloud](https://cloud.mongodb.com/).
-    After you create it, go to the database->connect->drivers copy menu to take the database connection string, then paste it in the environment variable
+    After you create it, go to the menu database->connect->drivers to take the database connection string, then paste it in the environment variable
    
      ```bash
      DATABASE_URL=youconnectionstring
