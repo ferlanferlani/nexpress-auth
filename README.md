@@ -5,74 +5,74 @@ a package or tool designed to create APIs using the Express framework in web app
 ![Nexpress API](https://github.com/ferlanferlani/nexpress-api/assets/87635305/eae6e6fa-8cc0-4cb7-a981-c399859565cc)
 
 
-## Guide
+##Guide
 
 To get started using this project, follow the steps below:
 
-   **Clone Repository**:
-   Get a copy of the project by running the following command:
-
-   ```bash
-   git clone https://github.com/ferlanferlani/nexpress-api.git
-   ```
-
-   or you can install with npm
-
-   ```bash
-   npm install nexpress-api
-   ```
-
-   **Install Dependencies**:
-   Navigate to the project directory and run the following command to install dependencies:
-
-   ```bash
-   cd nexpress-api
-   npm install
-   ```
-
-   **Configure Database**:
-
-Sebelum menjalankan aplikasi, Anda perlu mengatur beberapa hal terlebih dahulu:
-
-1. **App Password Gmail**: Aplikasi ini menggunakan nodemailer untuk melakukan otentikasi dengan verifikasi email. Sebelumnya, pastikan untuk membuat App Password di akun Google Anda. Anda dapat melakukan hal ini dengan mengikuti langkah-langkah berikut:
-
-    a. Masuk ke [pengaturan akun Google](https://myaccount.google.com/).
-    
-    b. Pilih "Keamanan" di sisi kiri.
-    
-    c. Di bawah "Masuk ke Google", cari opsi "Password Aplikasi".
-    
-    d. Klik "Pilih aplikasi" dan pilih "Lainnya".
-    
-    e. Beri nama untuk aplikasi, misalnya "Aplikasi Email ProyekX".
-    
-    f. Setelah mendapatkan password aplikasi, silahkan buat file `.env` atau juga kamu bisa menduplicate `.env.local` ubah menjadi `.env` lalu isi seperti ini:
+    **Clone Repository**:
+    Get a copy of the project by running the following command:
 
     ```bash
-    EMAIL=youremail@gmail.com
-    PASSWORD=yourpasswordapp  
+    git clone https://github.com/ferlanferlani/nexpress-api.git
     ```
 
-2. **MongoDB Database**: Aplikasi ini menggunakan MongoDB sebagai database-nya. Anda perlu membuat database terlebih dahulu. Anda dapat membuatnya di [MongoDB Cloud](https://cloud.mongodb.com/).
-   setelah kamu membuatnya masuk ke bagian menu databse->connect->drivers copy untuk mengambil string koneksi database, lalau pastekan di environment variable
+    or you can install with npm
+
+    ```bash
+    npm install nexpress-api
+    ```
+
+    **Install Dependencies**:
+    Navigate to the project directory and run the following command to install dependencies:
+
+    ```bash
+    cd nexpress-api
+    npm install
+    ```
+
+    **Configure Database**:
+
+Before running the application, you need to set a few things first:
+
+1. **App Password Gmail**: This application uses nodemailer to authenticate with email verification. Beforehand, make sure to create an App Password on your Google account. You can do this by following these steps:
+
+     a. Go to [Google account settings](https://myaccount.google.com/).
+    
+     b. Select "Security" on the left side.
+    
+     c. Under "Signing in to Google," look for the "App Passwords" option.
+    
+     d. Click "Select application" and select "More."
+    
+     e. Give the application a name, for example "ProjectX Email Application".
+    
+     f. After getting the application password, please create a `.env` file or you can also duplicate `.env.local`, change it to `.env` then fill it in like this:
+
+     ```bash
+     EMAIL=youremail@gmail.com
+     PASSWORD=yourpasswordapp
+     ```
+
+2. **MongoDB Database**: This application uses MongoDB as its database. You need to create a database first. You can create it in [MongoDB Cloud](https://cloud.mongodb.com/).
+    After you create it, go to the database->connect->drivers copy menu to take the database connection string, then paste it in the environment variable
    
-    ```bash
-    DATABASE_URL=youconnectionstring
-    ```
+     ```bash
+     DATABASE_URL=youconnectionstring
+     ```
     
-3. **Generate Database**: Sekarang, jalankan perintah berikut di terminal proyek Anda untuk menghasilkan database. Di sini, [Prisma ORM](https://www.prisma.io/). digunakan untuk berinteraksi dengan database:
+3. **Generate Database**: Now, run the following command in your project terminal to generate the database. Here, [Prisma ORM](https://www.prisma.io/). used to interact with the database:
 
-    ```bash
-    npx prisma generate
-    ```
+     ```bash
+     npx prism generate
+     ```
 
-Pastikan Anda telah mengatur semua konfigurasi dengan benar sebelum menjalankan aplikasi. Jika ada pertanyaan lebih lanjut, jangan ragu untuk bertanya di bagian issue!
+Make sure you have set all configurations correctly before running the application. If you have further questions, don't hesitate to ask in the issue section!
 
 **Starting Application**:
-   Once the installation is complete, you can start the project by running the following command:
+    Once the installation is complete, you can start the project by running the following command:
 
-   ```bash
-   npm run nexpress
-   ```
+    ```bash
+    npm run nexpress
+    ```
 
-   ## Happy Hacking
+    ## Happy Hacking
