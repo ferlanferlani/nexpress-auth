@@ -33,7 +33,15 @@ To get started using this project, follow the steps below:
    npm install
    ```
 
-3. **Starting Application**:
+
+3. **Configure Database**:
+   you can configure first:
+
+   ```bash
+   npx prisma generate
+   ```
+
+4. **Starting Application**:
    Once the installation is complete, you can start the project by running the following command:
 
    ```bash
