@@ -27,15 +27,11 @@ To get started using this project, follow the steps below:
 
    ```bash
    cd nexpress-api
-   ```
-
-   ```bash
    npm install
    ```
 
-
 3. **Configure Database**:
-   you can configure first:
+   you can configure first (comming soon!):
 
    ```bash
    npx prisma generate
