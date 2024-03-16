@@ -10,7 +10,7 @@ To get started using this project, follow the steps below:
    Get a copy of the project by running the following command:
     
     ```bash
-    git clone https://github.com/ferlanferlani/nexpress-api.git
+       git clone https://github.com/ferlanferlani/nexpress-api.git
     ```
 
    or you can install with npm
