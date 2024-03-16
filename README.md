@@ -9,23 +9,23 @@ To get started using this project, follow the steps below:
  **Clone Repository**:
    Get a copy of the project by running the following command:
     
-    ```bash
-       git clone https://github.com/ferlanferlani/nexpress-api.git
-    ```
+   ```bash
+    git clone https://github.com/ferlanferlani/nexpress-api.git
+   ```
 
    or you can install with npm
 
-    ```bash
+   ```bash
     npm install nexpress-api
-    ```
+   ```
 
    **Install Dependencies**:
     Navigate to the project directory and run the following command to install dependencies:
 
-    ```bash
+   ```bash
     cd nexpress-api
     npm install
-    ```
+   ```
 
  **Configure Database**:
 
