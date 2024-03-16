@@ -1,32 +1,30 @@
 # Nexpress-API
 
-Deskripsi singkat tentang proyek Anda.
+a package or tool designed to create APIs using the Express framework in web application development with Node.js. This emphasizes the package's focus on building APIs using Express as a backend framework.
 
-## Langkah-langkah
+## Guide
 
-Untuk memulai menggunakan proyek ini, ikuti langkah-langkah di bawah ini:
+To get started using this project, follow the steps below:
 
 1. **Clone Repositori**:
-   Dapatkan salinan proyek dengan menjalankan perintah berikut:
+   Get a copy of the project by running the following command:
 
    ```bash
    git clone https://github.com/username/nexpress-api.git
    ```
 
 2. **Install Dependensi**:
-   Navigasikan ke direktori proyek dan jalankan perintah berikut untuk menginstal dependensi:
+  Navigate to the project directory and run the following command to install dependencies:
 
    ```bash
    cd nexpress-api
    npm install
-
    ```
 
-3. **Memulai Aplikasi**:
-   Setelah instalasi selesai, Anda dapat memulai proyek dengan menjalankan perintah berikut:
+3. **Starting Application**:
+  Once the installation is complete, you can start the project by running the following command:
 
    ```bash
    npm run nexrepss
-
-
    ```
+   **Happy Hacking!**:
