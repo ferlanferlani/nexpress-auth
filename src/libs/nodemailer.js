@@ -1,8 +1,6 @@
 import nodemailer from "nodemailer";
 
-export const sendEmail = (req, res) => {
-  const { name, email, message } = req.body;
-
+export const sendEmail = async (name, email) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -12,13 +10,13 @@ export const sendEmail = (req, res) => {
   });
 
   const mailOptions = {
-    from: email,
-    to: process.env.EMAIL,
+    from: process.env.EMAIL,
+    to: email,
     subject: `Message from ${name}`,
-    text: message,
+    text: "nodemailer test",
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
+  await transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       res.send(error);
     } else {

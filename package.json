@@ -1,7 +1,24 @@
 {
-  "name": "nodejs-nodemailer",
+  "name": "expressify",
   "version": "1.0.0",
-  "description": "email sending",
+  "publisher": "Ferlan Ferlani",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferlanferlani/expressify"
+  },
+  "keywords": [
+    "express",
+    "expressify",
+    "nodejs",
+    "nodejs-express",
+    "backend",
+    "api-nodejs",
+    "api-nodejs-starter",
+    "api-nodejs-express",
+    "api-nodejs-starter-express",
+    "api-nodejs-express-starter"
+  ],
+  "description": "Expressify adalah istilah yang diambil dari kata 'Express' (yaitu framework web untuk Node.js) yang digabungkan dengan akhiran '-ify', yang sering digunakan untuk menunjukkan transformasi atau konversi sesuatu ke dalam bentuk atau format tertentu. ini mungkin menunjukkan bahwa package tersebut dirancang untuk membuat atau memperluas penggunaan framework Express dalam pengembangan aplikasi backend dengan Node.js.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -10,6 +27,7 @@
   "author": "Ferlan Ferlani",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^5.11.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
