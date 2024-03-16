@@ -1,6 +1,6 @@
 # Nexpress-API
 
-![Nexpress Image]([https://imgur.com/a/DfzHUV9](https://ferlanferlani.rf.gd/assets/nexpress-api.png))
+![Nexpress Image](https://ferlanferlani.rf.gd/assets/nexpress-api.png)
 
 a package or tool designed to create APIs using the Express framework in web application development with Node.js. This emphasizes the package's focus on building APIs using Express as a backend framework.
 
