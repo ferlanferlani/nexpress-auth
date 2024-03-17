@@ -1,6 +1,13 @@
 import nodemailer from "nodemailer";
+import crypto from "crypto";
 
-export const sendEmail = async (name, email) => {
+// import controller
+import { saveVerificationToken } from "../controllers/auth/saveVerificationToken.js";
+export const sendEmail = async (userId, name, email, baseUrl) => {
+  const token = crypto.randomBytes(32).toString("hex");
+
+  const verificationUrl = `${baseUrl}/auth/verify-email/?token=${token}`;
+
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -13,14 +20,21 @@ export const sendEmail = async (name, email) => {
     from: process.env.EMAIL,
     to: email,
     subject: "Email Verification",
-    text: `Hallo ${name} silahkan aktivasi email kamu di link berikut untuk melanjutkan proses`,
+    text: `Hallo ${name} silahkan aktivasi email kamu di link tautan berikut : ${verificationUrl}`,
   };
 
-  await transporter.sendMail(mailOptions, (error, info) => {
+  transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      res.send(error);
+      console.log(error);
     } else {
-      res.send(info);
+      console.log(info);
     }
   });
+
+  // save verification token to database
+  try {
+    await saveVerificationToken(userId, name, email, token);
+  } catch (error) {
+    console.log(error);
+  }
 };

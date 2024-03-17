@@ -5,7 +5,7 @@ import * as argon2 from "argon2";
 import { save } from "../../repositories/user.js";
 
 //** import services
-// import { sendEmail } from "../../services/nodemailer.js";
+import { sendEmail } from "../../services/nodemailer.js";
 
 //**  user validation
 import { userValidation } from "../../validations/server/user.js";
@@ -15,8 +15,15 @@ import { capitalizeFirstWord } from "../../helpers/capitalizeFirstWord.js";
 
 // import validation
 import { signUpFormValidation } from "../../validations/form/auth/signUp.js";
+import prisma from "../../services/prisma.js";
 
 export const SignUp = async (req, res) => {
+  const protocol = req.protocol;
+  const hostname = req.hostname;
+  const port = req.socket.localPort;
+
+  const baseUrl = `${protocol}://${hostname}:${port}`;
+
   const { userName, userEmail, userPassword, userConfirmPassword } = req.body;
 
   /**
@@ -50,10 +57,18 @@ export const SignUp = async (req, res) => {
     // ** save user
     const userSaved = await save(name, userEmail, paswordHashed);
 
+    const user = await prisma.users.findFirst({
+      where: {
+        email: userEmail,
+      },
+    });
+
+    const userId = user.id;
+
     /* Send Email Verification
-     *ini adalah fungsi optional untuk anda, jika diperlukan hapus blok komentarnya
+     *ini adalah optional untuk anda, jika diperlukan hapus blok komentarnya
      */
-    // await sendEmail(userName, userEmail);
+    await sendEmail(userId, userName, userEmail, baseUrl);
 
     res.status(201).json({
       sucess: true,

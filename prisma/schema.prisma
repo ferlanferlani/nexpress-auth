@@ -13,10 +13,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model users {
-  id          String  @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
-  email       String
-  emailVerified Boolean @default(false)
-  password    String
+model Users {
+  id                String               @id @default(auto()) @map("_id") @db.ObjectId
+  name              String               @unique
+  email             String
+  emailVerified     Boolean              @default(false)
+  password          String
+  createdAt         DateTime             @default(now())
+  udpatedAt         DateTime             @updatedAt()
+  verificationToken VerificationTokens[]
+}
+
+model VerificationTokens {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  name    String
+  email   String
+  expired Boolean @default(false)
+  token   String  @unique
+  userId  String  @db.ObjectId
+
+  createdAt DateTime @default(now())
+  user      Users    @relation(fields: [userId], references: [id])
 }
