@@ -9,6 +9,6 @@ const router = express.Router();
 router.use(signUp);
 
 router.get("/", (req, res) => {
-  res.send("Auth with nodemailer and prisma");
+  res.send("Nexpress API");
 });
 export default router;

@@ -1,6 +1,6 @@
 import express from "express";
-import cors from "cors";
 import dotenv from "dotenv";
+import cors from "cors";
 
 // import app route
 import appRoutes from "./routes/index.js";
@@ -17,8 +17,8 @@ app.use(appRoutes);
 app.listen(process.env.APP_PORT, () => {
   const appVersion = "1.0.0";
   const lineLength = 56;
-  const line = "\x1b[94m" + "=".repeat(lineLength) + "\x1b[0m"; 
-  const versionPadding = Math.floor((lineLength - 10 - appVersion.length) / 2); 
+  const line = "\x1b[94m" + "=".repeat(lineLength) + "\x1b[0m";
+  const versionPadding = Math.floor((lineLength - 10 - appVersion.length) / 2);
 
   console.log(
     `${line}\n\x1b[1mNexpress API is running on port http://localhost:${
