@@ -1,10 +1,10 @@
 import prisma from "../../services/prisma.js";
-import { updateVerificationToken } from "./updateVerificationToken.js";
 
 export const verifyEmail = async (req, res) => {
   const tokenfromUrl = req.query.token;
+
   try {
-    const tokenIsExpired = await prisma.verificationTokens.findMany({
+    const expiredToken = await prisma.verificationTokens.findFirst({
       where: {
         expired: {
           lt: new Date(),
@@ -12,40 +12,41 @@ export const verifyEmail = async (req, res) => {
       },
     });
 
-    if (tokenIsExpired.length > 0) {
-      await prisma.verificationTokens.update({
+    if (expiredToken) {
+      await prisma.verificationTokens.delete({
         where: {
-          token: tokenfromUrl,
-        },
-        data: {
-          isExpired: true,
+          id: expiredToken.id,
         },
       });
-
-      // send to update verification token
-      const verificationTokenId = tokenIsExpired[0].id;
-      updateVerificationToken(verificationTokenId);
-
-      return res.status(400).send("token is expired");
+      return res.status(400).send({
+        error: "Token Expired",
+      });
     }
 
-    const token = await prisma.verificationTokens.delete({
+    const verificationToken = await prisma.verificationTokens.findFirst({
       where: {
         token: tokenfromUrl,
       },
     });
 
+    if (!verificationToken) {
+      return res.status(400).send({
+        error: "Invalid Token",
+      });
+    }
+
     await prisma.users.update({
       where: {
-        id: token.userId,
+        id: verificationToken.userId,
       },
       data: {
         emailVerified: true,
       },
     });
 
-    res.send("Email verified successfully");
+    res.status(200).send("Email Verified");
   } catch (error) {
-    res.status(400).send("token is expired");
+    console.error("Error:", error);
+    res.status(500).send("Internal Server Error");
   }
 };

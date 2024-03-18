@@ -1,11 +1,10 @@
 import prisma from "../services/prisma.js";
 import crypto from "crypto";
 
+// token is expired on 45 minutes
+const currentDate = new Date();
+const expirationTime = new Date(currentDate.getTime() + 1 * 60000);
 export const save = async (userId, name, email, token) => {
-  // token is expired on 45 minutes
-  const currentDate = new Date();
-  const expirationTime = new Date(currentDate.getTime() + 1 * 60000);
-
   try {
     const tokenSaved = await prisma.verificationTokens.create({
       data: {
@@ -54,6 +53,7 @@ export const update = async (verificationTokenId) => {
         isExpired: false,
       },
     });
+    console.log("sucsess update verification token");
   } catch (error) {
     console.log(error);
   }
