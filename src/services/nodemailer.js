@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 import crypto from "crypto";
 
 // import controller
-import { saveVerificationToken } from "../controllers/auth/saveVerificationToken.js";
+import { getVerificationTokenData } from "../controllers/auth/saveVerificationToken.js";
 export const sendEmail = async (userId, name, email, baseUrl) => {
   const token = crypto.randomBytes(32).toString("hex");
 
@@ -19,8 +19,8 @@ export const sendEmail = async (userId, name, email, baseUrl) => {
   const mailOptions = {
     from: process.env.EMAIL,
     to: email,
-    subject: "Email Verification",
-    text: `Hallo ${name} silahkan aktivasi email kamu di link tautan berikut : ${verificationUrl}`,
+    subject: "Nexpress API Email Verification",
+    text: `Hallo ${name}! token akan expired dalam waktu 45 menit silahkan aktivasi email kamu di link tautan berikut : ${verificationUrl}`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
@@ -33,7 +33,7 @@ export const sendEmail = async (userId, name, email, baseUrl) => {
 
   // save verification token to database
   try {
-    await saveVerificationToken(userId, name, email, token);
+    await getVerificationTokenData(userId, name, email, token);
   } catch (error) {
     console.log(error);
   }
