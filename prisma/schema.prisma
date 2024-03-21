@@ -29,7 +29,6 @@ model VerificationTokens {
   name      String
   email     String
   expired   DateTime
-  isExpired Boolean  @default(false)
   token     String   @unique
   userId    String   @db.ObjectId
 

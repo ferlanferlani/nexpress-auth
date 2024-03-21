@@ -1,10 +1,10 @@
 import prisma from "../services/prisma.js";
-import crypto from "crypto";
+import jwt from "jsonwebtoken";
 
 // token is expired on 45 minutes
 const currentDate = new Date();
 const expirationTime = new Date(currentDate.getTime() + 1 * 60000);
-export const save = async (userId, name, email, token) => {
+export const save = async (userId, name, email, token, res) => {
   try {
     const tokenSaved = await prisma.verificationTokens.create({
       data: {
@@ -19,8 +19,21 @@ export const save = async (userId, name, email, token) => {
         },
       },
     });
+
+    const userToken = jwt.sign(
+      {
+        userId,
+        name,
+        email,
+      },
+      process.env.USER_TOKEN
+    );
+
+    res.cookie("user", userToken, { httpOnly: true });
+
     console.log({
       sucsess: true,
+      message: "verification token saved",
       data: tokenSaved,
     });
   } catch (error) {
@@ -29,32 +42,4 @@ export const save = async (userId, name, email, token) => {
 };
 
 // update verification token
-export const update = async (verificationTokenId) => {
-  try {
-    const verificationTokens = await prisma.verificationTokens.findUnique({
-      where: {
-        id: verificationTokenId,
-      },
-    });
-
-    const newToken = (verificationTokens.token = crypto
-      .randomBytes(32)
-      .toString("hex"));
-
-    const newExpirationTime = expirationTime;
-
-    await prisma.verificationTokens.update({
-      where: {
-        id: verificationTokenId,
-      },
-      data: {
-        expired: newExpirationTime,
-        token: newToken,
-        isExpired: false,
-      },
-    });
-    console.log("sucsess update verification token");
-  } catch (error) {
-    console.log(error);
-  }
-};
+export const resendEmail = async () => {};

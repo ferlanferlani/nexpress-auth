@@ -3,7 +3,7 @@ import crypto from "crypto";
 
 // import controller
 import { getVerificationTokenData } from "../controllers/auth/saveVerificationToken.js";
-export const sendEmail = async (userId, name, email, baseUrl) => {
+export const sendEmail = async (userId, name, email, baseUrl, res) => {
   const token = crypto.randomBytes(32).toString("hex");
 
   const verificationUrl = `${baseUrl}/auth/verify-email/?token=${token}`;
@@ -33,7 +33,7 @@ export const sendEmail = async (userId, name, email, baseUrl) => {
 
   // save verification token to database
   try {
-    await getVerificationTokenData(userId, name, email, token);
+    await getVerificationTokenData(userId, name, email, token, res);
   } catch (error) {
     console.log(error);
   }

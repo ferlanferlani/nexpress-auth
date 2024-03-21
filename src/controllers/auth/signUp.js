@@ -68,7 +68,7 @@ export const SignUp = async (req, res) => {
     /* Send Email Verification
      *ini adalah optional untuk anda, jika diperlukan hapus blok komentarnya
      */
-    await sendEmail(userId, userName, userEmail, baseUrl);
+    await sendEmail(userId, userName, userEmail, baseUrl, res);
 
     res.status(201).json({
       sucess: true,
