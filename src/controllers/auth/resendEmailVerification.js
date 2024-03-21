@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import { sendEmail } from "../../services/nodemailer.js";
+import prisma from "../../services/prisma.js";
 export const resendEmailVerification = async (req, res) => {
   const protocol = req.protocol;
   const hostname = req.hostname;
@@ -23,10 +24,28 @@ export const resendEmailVerification = async (req, res) => {
     }
   );
 
-  const { userId, name, email } = userCredential;
-
-  // send email verification
   try {
+    // send email verification
+    const { userId, name, email } = userCredential;
+
+    const userIsVerified = await prisma.users.findFirst({
+      where: {
+        id: userId,
+        emailVerified: true,
+      },
+    });
+
+    if (userIsVerified) {
+      return res.status(400).json({
+        credential: {
+          userId,
+          name,
+          email,
+        },
+        message: "Email already verified",
+      });
+    }
+
     await sendEmail(userId, name, email, baseUrl);
     res.status(200).json({
       success: true,

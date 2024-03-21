@@ -19,7 +19,7 @@ export const verifyEmail = async (req, res) => {
     const expiredToken = await prisma.verificationTokens.findFirst({
       where: {
         expired: {
-          lt: new Date(),
+          lte: new Date(),
         },
       },
     });
@@ -67,6 +67,8 @@ export const verifyEmail = async (req, res) => {
     }
 
     res.status(200).send("Email Verified");
+    // clear cookie
+    res.clearCookie("user");
   } catch (error) {
     console.error("Error:", error);
     res.status(500).send("Internal Server Error");
