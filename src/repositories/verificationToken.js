@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 
 // token is expired on 45 minutes
 const currentDate = new Date();
-const expirationTime = new Date(currentDate.getTime() + 1 * 60000);
+const expirationTime = new Date(currentDate.getTime() + 3 * 60000);
 export const save = async (userId, name, email, token, res) => {
   try {
     const tokenSaved = await prisma.verificationTokens.create({
@@ -40,6 +40,3 @@ export const save = async (userId, name, email, token, res) => {
     console.log(error);
   }
 };
-
-// update verification token
-export const resendEmail = async () => {};

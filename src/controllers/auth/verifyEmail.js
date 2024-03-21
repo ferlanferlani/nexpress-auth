@@ -4,6 +4,18 @@ export const verifyEmail = async (req, res) => {
   const tokenfromUrl = req.query.token;
 
   try {
+    const verificationToken = await prisma.verificationTokens.findFirst({
+      where: {
+        token: tokenfromUrl,
+      },
+    });
+
+    if (!verificationToken) {
+      return res.status(400).send({
+        error: "Invalid Token",
+      });
+    }
+
     const expiredToken = await prisma.verificationTokens.findFirst({
       where: {
         expired: {
@@ -12,7 +24,6 @@ export const verifyEmail = async (req, res) => {
       },
     });
 
-    // delete verification token is expired
     if (expiredToken) {
       await prisma.verificationTokens.delete({
         where: {
@@ -24,19 +35,7 @@ export const verifyEmail = async (req, res) => {
       });
     }
 
-    const verificationToken = await prisma.verificationTokens.findFirst({
-      where: {
-        token: tokenfromUrl,
-      },
-    });
-
-    if (!verificationToken) {
-      return res.status(400).send({
-        error: "Token Expired",
-      });
-    }
-
-    await prisma.users.update({
+    const user = await prisma.users.update({
       where: {
         id: verificationToken.userId,
       },
@@ -45,14 +44,13 @@ export const verifyEmail = async (req, res) => {
       },
     });
 
-    // hapus verification token ketika verify email user sudah true dan token masih ada di database
     const userEmailVerified = await prisma.users.findFirst({
       where: {
-        emailVerified: true,
+        email: user.email,
       },
     });
 
-    const userId = userEmailVerified.id;
+    const userId = user.id;
 
     const verificationTokenId = await prisma.verificationTokens.findFirst({
       where: {

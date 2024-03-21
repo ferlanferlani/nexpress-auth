@@ -22,6 +22,7 @@ export const resendEmailVerification = async (req, res) => {
       return { userId, name, email };
     }
   );
+
   const { userId, name, email } = userCredential;
 
   // send email verification
