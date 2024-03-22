@@ -1,6 +1,6 @@
 # Nexpress-API
 
-a package or tool designed to create APIs using the Express framework in web application development with Node.js. This emphasizes the package's focus on building APIs using Express as a backend framework.
+a starter template or tool/package designed to create APIs using the Express framework in web application development with Node.js which is integrated with email auth verification. This emphasizes the package's focus on building APIs using Express as a backend framework.
 
 ![Nexpress API](https://github.com/ferlanferlani/nexpress-api/assets/87635305/eae6e6fa-8cc0-4cb7-a981-c399859565cc)
 
@@ -45,7 +45,7 @@ Before running the application, you need to set a few things first:
    After you create it, go to the menu database->connect->drivers to take the database connection string, then paste it in the environment variable
 
    ```bash
-   DATABASE_URL=youconnectionstring
+   DATABASE_URL=yourconnectionstring
    ```
 
 3. **Generate Database**: Now, run the following command in your project terminal to generate the database. Here, [Prisma ORM](https://www.prisma.io/). used to interact with the database:
