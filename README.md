@@ -64,7 +64,7 @@ npm run nexpress
 ```
 
 **Author**:
-nexpress is created by [ferlanferlani!](https://ferlanferlani.rf.gd)
+nexpress is created by [ferlanferlani](https://ferlanferlani.rf.gd)
 
 **Donate**:
 if you have used this package and it is very useful and helpful to you, feel free to donate
