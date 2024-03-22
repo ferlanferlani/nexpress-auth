@@ -1,5 +1,5 @@
 import express from "express";
-import { getAll } from "../../controllers/user/indexController.js";
+import { getAll } from "../../controllers/user/userController.js";
 import { extractToken, verifyToken } from "../../middleware/verifyToken.js";
 
 const router = express.Router();
