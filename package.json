@@ -4,9 +4,6 @@
   "engines": {
     "node": ">=16.0.0"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "private": false,
   "publisher": "Ferlan Ferlani",
   "repository": {
