@@ -60,7 +60,7 @@ Make sure you have set all configurations correctly before running the applicati
 Once the installation is complete, you can start the project by running the following command:
 
 ```bash
- npm run nexpress
+npm run nexpress
 ```
 
 **Author**:
