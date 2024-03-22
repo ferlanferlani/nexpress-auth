@@ -7,7 +7,7 @@ a starter template or tool/package designed to create APIs using the Express fra
 To get started using this project, follow the steps below, Get a copy of the project by running the following command:
 
 ```bash
- npm install nexpress-api
+ git clone https://github.com/ferlanferlani/nexpress-api.git
 ```
 
 **Install Dependencies**:
