@@ -64,8 +64,9 @@ Once the installation is complete, you can start the project by running the foll
 ```
 
 **Author**:
-nexpress is created byd [ferlanferlani!](https://ferlanferlani.rf.gd)
+nexpress is created by [ferlanferlani!](https://ferlanferlani.rf.gd)
 
 **Donate**:
 if you have used this package and it is very useful and helpful to you, feel free to donate
+
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/ferlanferlani)
