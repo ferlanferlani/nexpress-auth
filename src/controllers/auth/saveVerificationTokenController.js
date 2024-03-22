@@ -1,6 +1,6 @@
-import { save } from "../../repositories/auth/saveVerificationTokenRepositories.js";
+import { saveVerificationTokenRepository } from "../../repositories/auth/saveVerificationTokenRepository.js";
 
-export const saveVerificationToken = async (
+export const saveVerificationTokenController = async (
   userId,
   name,
   email,
@@ -9,7 +9,7 @@ export const saveVerificationToken = async (
 ) => {
   try {
     // save verification token
-    await save(userId, name, email, token, res);
+    await saveVerificationTokenRepository(userId, name, email, token, res);
   } catch (error) {
     console.log(error);
   }

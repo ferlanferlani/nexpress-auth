@@ -1,6 +1,9 @@
 import express from "express";
-import { resendEmailVerification } from "../../controllers/auth/resendEmailVerificationController.js";
+import { resendEmailVerificationController } from "../../controllers/auth/resendEmailVerificationController.js";
 
 const router = express.Router();
-router.post("/auth/resend-email-verification/", resendEmailVerification);
+router.post(
+  "/auth/resend-email-verification/",
+  resendEmailVerificationController
+);
 export default router;

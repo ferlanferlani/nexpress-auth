@@ -1,6 +1,6 @@
 import express from "express";
-import { logout } from "../../controllers/auth/logoutController.js";
+import { logoutContorller } from "../../controllers/auth/logoutController.js";
 
 const router = express.Router();
-router.delete("/auth/logout", logout);
+router.delete("/auth/logout", logoutContorller);
 export default router;

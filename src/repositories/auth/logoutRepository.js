@@ -1,7 +1,7 @@
 import prisma from "../../services/prismaService.js";
 import jwt from "jsonwebtoken";
 
-export const userLogout = async (req, res) => {
+export const logoutRepository = async (req, res) => {
   try {
     const refreshToken = req.cookies.refresh_token;
     if (!refreshToken) {

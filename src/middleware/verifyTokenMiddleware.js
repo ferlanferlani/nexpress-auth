@@ -5,6 +5,7 @@ export const extractToken = (req, res, next) => {
   const authHeader = req.headers["authorization"];
   const accessToken = authHeader && authHeader.split(" ")[1];
   req.token = accessToken;
+
   next();
 };
 export const verifyToken = async (req, res, next) => {
@@ -14,8 +15,6 @@ export const verifyToken = async (req, res, next) => {
         message: "Token not privided",
       });
     }
-
-    // check apakah user yang sedang login ini ada di database
 
     // if access token is exists
     const decoded = jwt.verify(req.token, process.env.ACCESS_TOKEN);
@@ -33,22 +32,42 @@ export const verifyToken = async (req, res, next) => {
       });
     }
 
-    req.email = decoded.email;
+    const userRefreshTokenIsNull = await prisma.users.findFirst({
+      where: {
+        refreshToken: null,
+      },
+    });
+
+    if (userRefreshTokenIsNull) {
+      return res.status(401).json({
+        error: "your are logout cant access",
+      });
+    }
+
+    req.email = decoded.userEmail;
   } catch (error) {
     // if access token is invalid
     if (
-      error === "jsonWebTokenError" ||
+      error.name === "JsonWebTokenError" ||
       error.message === "jwt malformed" ||
       error.message === "invalid signature"
     ) {
       return res.status(401).json({
-        error: "Invalid token",
+        error: "Invalid token: Token is malformed or has an invalid signature",
+      });
+    } else if (
+      error.name === "TokenExpiredError" ||
+      error.message === "jwt expired"
+    ) {
+      return res.status(401).json({
+        error: "Token expired: Please login again to obtain a new token",
+      });
+    } else {
+      return res.status(401).json({
+        message: "Unauthorized: Invalid token",
+        error: error.message,
       });
     }
-
-    return res.status(500).json({
-      message: "Internal Server Error",
-    });
   }
   next();
 };

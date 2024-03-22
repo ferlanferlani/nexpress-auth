@@ -1,7 +1,13 @@
 import prisma from "../../services/prismaService.js";
 import jwt from "jsonwebtoken";
 
-export const save = async (userId, name, email, token, res) => {
+export const saveVerificationTokenRepository = async (
+  userId,
+  name,
+  email,
+  token,
+  res
+) => {
   // token is expired on 45 minutes
   const currentDate = new Date();
   const expirationTime = new Date(currentDate.getTime() + 45 * 60000);

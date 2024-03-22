@@ -1,8 +1,8 @@
-import { userLogout } from "../../repositories/auth/logoutRepositories.js";
+import { logoutRepository } from "../../repositories/auth/logoutRepository.js";
 
-export const logout = async (req, res) => {
+export const logoutContorller = async (req, res) => {
   try {
-    await userLogout(req, res);
+    await logoutRepository(req, res);
   } catch (error) {
     return res.status(500).json({
       error: error.message,

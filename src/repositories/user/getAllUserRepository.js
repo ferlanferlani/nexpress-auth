@@ -1,6 +1,6 @@
 import prisma from "../../services/prismaService.js";
 
-export const getAllUser = async (req, res) => {
+export const getAllUserRepository = async (req, res) => {
   try {
     const users = await prisma.users.findMany({
       select: {
