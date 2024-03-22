@@ -1,6 +1,13 @@
 {
   "name": "@ferlanferlani/nexpress-api",
-  "version": "1.0.2",
+  "version": "1.0.1",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "private": false,
   "publisher": "Ferlan Ferlani",
   "repository": {
     "type": "git",
