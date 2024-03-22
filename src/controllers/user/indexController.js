@@ -1,5 +1,6 @@
-import { getAllUser } from "../../repositories/user.js";
+import { getAllUser } from "../../repositories/user/geAllRepositories.js";
 
+// *** get all user
 export const getAll = async (req, res) => {
   try {
     await getAllUser(req, res);

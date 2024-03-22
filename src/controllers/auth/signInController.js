@@ -1,5 +1,5 @@
 import * as argon2 from "argon2";
-import prisma from "../../services/prisma.js";
+import prisma from "../../services/prismaService.js";
 import jwt from "jsonwebtoken";
 
 export const signIn = async (req, res) => {
@@ -11,6 +11,16 @@ export const signIn = async (req, res) => {
         email: email,
       },
     });
+
+    const userEmailIsNotVerified = await prisma.users.findFirst({
+      where: {
+        emailVerified: false,
+      },
+    });
+
+    if (userEmailIsNotVerified) {
+      return res.status(400).json({ error: "Please verify your email first!" });
+    }
 
     if (!user) {
       return res.status(400).json({ error: "user not registered!" });
@@ -43,7 +53,10 @@ export const signIn = async (req, res) => {
       process.env.ACCESS_TOKEN
     );
 
-    res.cookie("refresh_token", refreshToken);
+    res.cookie("refresh_token", refreshToken, {
+      httpOnly: true,
+      maxAge: 24 * 60 * 60 * 1000,
+    });
 
     await prisma.users.update({
       where: {

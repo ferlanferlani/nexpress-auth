@@ -1,6 +1,6 @@
-import { save } from "../../repositories/verificationToken.js";
+import { save } from "../../repositories/auth/saveVerificationTokenRepositories.js";
 
-export const getVerificationTokenData = async (
+export const saveVerificationToken = async (
   userId,
   name,
   email,

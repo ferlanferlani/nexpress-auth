@@ -1,4 +1,4 @@
-import prisma from "../../services/prisma.js";
+import prisma from "../../services/prismaService.js";
 
 export const verifyEmail = async (req, res) => {
   const tokenfromUrl = req.query.token;

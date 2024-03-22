@@ -2,10 +2,10 @@
 import * as argon2 from "argon2";
 
 // ** import repositories
-import { save } from "../../repositories/user.js";
+import { save } from "../../repositories/user/saveRepositories.js";
 
 //** import services
-import { sendEmail } from "../../services/nodemailer.js";
+import { sendEmail } from "../../services/nodemailerService.js";
 
 //**  user validation
 import { userValidation } from "../../validations/server/user.js";
@@ -14,8 +14,8 @@ import { userValidation } from "../../validations/server/user.js";
 import { capitalizeFirstWord } from "../../helpers/capitalizeFirstWord.js";
 
 // import validation
-import { signUpFormValidation } from "../../validations/form/auth/signUp.js";
-import prisma from "../../services/prisma.js";
+import { signUpFormValidation } from "../../validations/form/auth/signUpValidation.js";
+import prisma from "../../services/prismaService.js";
 
 export const SignUp = async (req, res) => {
   const protocol = req.protocol;

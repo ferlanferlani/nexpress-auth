@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
-import { sendEmail } from "../../services/nodemailer.js";
-import prisma from "../../services/prisma.js";
+import { sendEmail } from "../../services/nodemailerService.js";
+import prisma from "../../services/prismaService.js";
 export const resendEmailVerification = async (req, res) => {
   const protocol = req.protocol;
   const hostname = req.hostname;

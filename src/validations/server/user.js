@@ -1,4 +1,4 @@
-import prisma from "../../services/prisma.js";
+import prisma from "../../services/prismaService.js";
 
 export const userValidation = async (email) => {
   const userAlreadyExists = await prisma.users.findFirst({

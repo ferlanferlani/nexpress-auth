@@ -1,14 +1,14 @@
 import express from "express";
 
 // import auth route
-import signUpRoute from "./auth/signUp.js";
-import verifyEmailRoute from "./auth/verifyEmail.js";
-import resendVerificationEmailRoute from "./auth/resendVerificationEmail.js";
-import signInRoute from "../routes/auth/signIn.js";
+import signUpRoute from "./auth/signUpRoute.js";
+import verifyEmailRoute from "./auth/verifyEmailRoute.js";
+import resendVerificationEmailRoute from "./auth/resendVerificationEmailRoute.js";
+import signInRoute from "./auth/signInRoute.js";
 
 // import user route
-import userRouter from "../routes/user/getAll.js";
-import userLogout from '../routes/auth/logout.js'
+import userRouter from "./user/indexRoute.js";
+import userLogout from "./auth/logoutRoute.js";
 
 const router = express.Router();
 
@@ -17,7 +17,7 @@ router.use(signUpRoute);
 router.use(signInRoute);
 router.use(verifyEmailRoute);
 router.use(resendVerificationEmailRoute);
-router.use(userLogout)
+router.use(userLogout);
 
 // user route
 router.use(userRouter);

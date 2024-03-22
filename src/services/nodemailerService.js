@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 import crypto from "crypto";
 
 // import controller
-import { getVerificationTokenData } from "../controllers/auth/saveVerificationToken.js";
+import { saveVerificationToken } from "../controllers/auth/saveVerificationTokenController.js";
 export const sendEmail = async (userId, name, email, baseUrl, res) => {
   const token = crypto.randomBytes(32).toString("hex");
 
@@ -33,7 +33,7 @@ export const sendEmail = async (userId, name, email, baseUrl, res) => {
 
   // save verification token to database
   try {
-    await getVerificationTokenData(userId, name, email, token, res);
+    await saveVerificationToken(userId, name, email, token, res);
   } catch (error) {
     console.log(error);
   }

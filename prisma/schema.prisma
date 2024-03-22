@@ -15,8 +15,8 @@ datasource db {
 
 model Users {
   id                String               @id @default(auto()) @map("_id") @db.ObjectId
-  name              String               @unique
-  email             String
+  name              String
+  email             String               @unique
   emailVerified     Boolean              @default(false)
   password          String
   createdAt         DateTime             @default(now())
@@ -28,7 +28,7 @@ model Users {
 model VerificationTokens {
   id      String   @id @default(auto()) @map("_id") @db.ObjectId
   name    String
-  email   String
+  email   String   @unique
   expired DateTime
   token   String   @unique
   userId  String   @db.ObjectId
