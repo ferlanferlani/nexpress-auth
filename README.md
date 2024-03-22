@@ -1,6 +1,6 @@
 # Nexpress-API
 
-a starter template or tool/package designed to create APIs using the Express framework in web application development with Node.js which is integrated with email auth verification. This emphasizes the package's focus on building APIs using Express as a backend framework.
+a starter template designed to create APIs using the Express framework in web application development with Node.js which is integrated with email auth verification. This emphasizes the package's focus on building APIs using Express as a backend framework.
 
 ![Nexpress API](https://github.com/ferlanferlani/nexpress-api/assets/87635305/eae6e6fa-8cc0-4cb7-a981-c399859565cc)
 
