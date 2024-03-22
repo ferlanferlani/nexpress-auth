@@ -4,10 +4,7 @@ a package or tool designed to create APIs using the Express framework in web app
 
 ![Nexpress API](https://github.com/ferlanferlani/nexpress-api/assets/87635305/eae6e6fa-8cc0-4cb7-a981-c399859565cc)
 
-To get started using this project, follow the steps below:
-
-**Clone Repository**:
-Get a copy of the project by running the following command:
+To get started using this project, follow the steps below, Get a copy of the project by running the following command:
 
 ```bash
  npm install nexpress-api
@@ -20,8 +17,6 @@ Navigate to the project directory and run the following command to install depen
  cd nexpress-api
  npm install
 ```
-
-**Configure Database**:
 
 Before running the application, you need to set a few things first:
 
@@ -44,6 +39,8 @@ Before running the application, you need to set a few things first:
    PASSWORD=yourpasswordapp
    ```
 
+   **Configure Database**:
+
 2. **MongoDB Database**: This application uses MongoDB as its database. You need to create a database first. You can create it in [MongoDB Cloud](https://cloud.mongodb.com/).
    After you create it, go to the menu database->connect->drivers to take the database connection string, then paste it in the environment variable
 
@@ -59,11 +56,16 @@ Before running the application, you need to set a few things first:
 
 Make sure you have set all configurations correctly before running the application. If you have further questions, don't hesitate to ask in the issue section or click [here!](https://github.com/ferlanferlani/nexpress-api/issues/1)
 
-**Starting Application**:
+**Run it Locally**:
 Once the installation is complete, you can start the project by running the following command:
 
 ```bash
  npm run nexpress
 ```
 
-## still in the development stage
+**Author**:
+nexpress is created byd [ferlanferlani!](https://ferlanferlani.rf.gd)
+
+**Donate**:
+if you have used this package and it is very useful and helpful to you, feel free to donate
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/ferlanferlani)
