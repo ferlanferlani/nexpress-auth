@@ -22,15 +22,16 @@ model Users {
   createdAt         DateTime             @default(now())
   udpatedAt         DateTime             @updatedAt()
   verificationToken VerificationTokens[]
+  refreshToken      String?
 }
 
 model VerificationTokens {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  name      String
-  email     String
-  expired   DateTime
-  token     String   @unique
-  userId    String   @db.ObjectId
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  name    String
+  email   String
+  expired DateTime
+  token   String   @unique
+  userId  String   @db.ObjectId
 
   createdAt DateTime @default(now())
   user      Users    @relation(fields: [userId], references: [id])
