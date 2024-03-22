@@ -36,7 +36,7 @@ Before running the application, you need to set a few things first:
 
    ```bash
    EMAIL=youremail@gmail.com
-   PASSWORD=yourpasswordapp
+   PASSWORD=yourapppassword
    ```
 
    **Configure Database**:
