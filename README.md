@@ -4,6 +4,9 @@ a starter template designed to create APIs using the Express framework in web ap
 
 ![Nexpress API](https://github.com/ferlanferlani/nexpress-api/assets/87635305/eae6e6fa-8cc0-4cb7-a981-c399859565cc)
 
+# Excess
+You don't need to bother making API requests from the start, nexpress even provides authentication functionality using verification emails, and forgetting passwords. This will make your work easier and you can customize it according to your project needs.
+
 To get started using this project, follow the steps below, Get a copy of the project by running the following command:
 
 ```bash
@@ -79,22 +82,27 @@ description : signin(login)
 method : POST
 fields : {email, password}
 
+
 endpoint : /auth/verify-email/:name/
 description : verify email
 method : GET
 
+
 endpoint : /auth/resend-email-verification/
 description : resend email verification
 method : POST
+
 
 refresh token : /auth/refresh-token/
 description : get refresh token
 method : GET
 authenticate : Bearer (token)
 
+
 endpoint : /auth/forgot-password/
-description : if you forgot password
+description : forgot password
 method : POST
+
 
 endpoint : /auth/reset-password/:name/
 description : reset your password
