@@ -10,7 +10,7 @@ You don't need to bother making API authentication requests from the start, nexp
 To get started using this project, follow the steps below, Get a copy of the project by running the following command:
 
 ```bash
- git clone https://github.com/ferlanferlani/nexpress-api.git
+ git clone https://github.com/ferlanferlani/nexpress-auth.git
 ```
 
 **Install Dependencies**:
