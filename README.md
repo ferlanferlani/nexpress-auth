@@ -2,7 +2,7 @@
 
 a starter template designed to create API authentication using the Express framework in web application development with Node.js which is integrated with email auth verification. This emphasizes the package's focus on building APIs using Express as a backend framework.
 
-![Nexpress API](https://github.com/ferlanferlani/nexpress-api/assets/87635305/eae6e6fa-8cc0-4cb7-a981-c399859565cc)
+![Nexpress Auth]([https://github.com/ferlanferlani/nexpress-api/assets/87635305/eae6e6fa-8cc0-4cb7-a981-c399859565cc](https://github.com/ferlanferlani/nexpress-auth/issues/1))
 
 # Excess
 You don't need to bother making API authentication requests from the start, nexpress auth even provides authentication functionality using verification emails, and forgetting passwords. This will make your work easier and you can customize it according to your project needs.
