@@ -29,6 +29,8 @@ router.use(userLogout);
 router.use(userRouter);
 
 router.get("/", (req, res) => {
-  res.sendFile("documentation/index.html", { root: "./" });
+  res.redirect(
+    "https://github.com/ferlanferlani/nexpress-api/blob/main/README.md"
+  );
 });
 export default router;
