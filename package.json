@@ -1,5 +1,5 @@
 {
-  "name": "nexpress-api",
+  "name": "nexpress-auth",
   "version": "1.0.2",
   "engines": {
     "node": ">=16.0.0"
@@ -8,22 +8,10 @@
   "publisher": "Ferlan Ferlani",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ferlanferlani/nexpress-api"
+    "url": "https://github.com/ferlanferlani/nexpress-auth"
   },
-  "keywords": [
-    "express",
-    "express-api",
-    "nodejs",
-    "nodejs-express",
-    "backend",
-    "api-nodejs",
-    "api-nodejs-starter",
-    "api-nodejs-express",
-    "api-nodejs-starter-express",
-    "api-nodejs-express-starter"
-  ],
   "homepage": "https://github.com/ferlanferlani/nexpress-api#readme",
-  "description": "a package or tool designed to create APIs using the Express framework in web application development with Node.js. This emphasizes the package's focus on building APIs using Express as a backend framework.",
+  "description": "a package or tool designed to create API authentication using the Express framework in web application development with Node.js. This emphasizes the package's focus on building APIs using Express as a backend framework.",
   "main": "src/api/app.js",
   "type": "module",
   "scripts": {

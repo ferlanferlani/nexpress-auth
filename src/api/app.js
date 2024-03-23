@@ -23,7 +23,7 @@ app.listen(process.env.APP_PORT, () => {
   const versionPadding = Math.floor((lineLength - 10 - appVersion.length) / 2);
 
   console.log(
-    `${line}\n\x1b[1mNexpress API is running, access in your browser to see documentation http://localhost:${
+    `${line}\n\x1b[1mNexpress Auth is running, access in your browser to see documentation http://localhost:${
       process.env.APP_PORT
     }\n\x1b[0m${" ".repeat(
       versionPadding
