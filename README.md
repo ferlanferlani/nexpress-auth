@@ -63,6 +63,52 @@ Once the installation is complete, you can start the project by running the foll
 npm run nexpress
 ```
 
+## how do you make a request to the API?
+By default, Nexpress already provides requests, namely auth and user, you can try it
+
+**Auth**:
+```bash
+endpoint : /auth/signup/
+description : signup
+method : POST
+fields : {email, password, confirmPassword}
+
+
+endpoint : /auth/signin/
+description : signin(login)
+method : POST
+fields : {email, password}
+
+endpoint : /auth/verify-email/:name/
+description : verify email
+method : GET
+
+endpoint : /auth/resend-email-verification/
+description : resend email verification
+method : POST
+
+refresh token : /auth/refresh-token/
+description : get refresh token
+method : GET
+authenticate : Bearer (token)
+
+endpoint : /auth/forgot-password/
+description : if you forgot password
+method : POST
+
+endpoint : /auth/reset-password/:name/
+description : reset your password
+method : GET
+fields : {password, cofirmPassword}
+```
+
+**User**:
+```bash
+endpoint : /user/
+description : get all user
+authenticate : Bearer (token)
+```
+
 **Author**:
 nexpress is created by [ferlanferlani](https://ferlanferlani.rf.gd)
 
