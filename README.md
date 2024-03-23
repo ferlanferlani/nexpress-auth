@@ -70,3 +70,6 @@ nexpress is created by [ferlanferlani](https://ferlanferlani.rf.gd)
 if you have used this package and it is very useful and helpful to you, feel free to donate
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/ferlanferlani)
+
+**License**:
+This library is under MIT license.
