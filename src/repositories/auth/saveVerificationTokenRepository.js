@@ -39,12 +39,14 @@ export const saveVerificationTokenRepository = async (
 
     res.cookie("user", userToken, { httpOnly: true });
 
-    console.log({
+    return res.status(200).json({
       sucsess: true,
       message: "verification token saved",
       data: tokenSaved,
     });
   } catch (error) {
-    console.log(error);
+    return res.status(500).json({
+      error: error.message,
+    });
   }
 };

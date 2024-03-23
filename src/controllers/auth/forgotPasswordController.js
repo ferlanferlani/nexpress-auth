@@ -1,22 +1,8 @@
 import { forgotPasswordRepository } from "../../repositories/auth/forgotPasswordRepositories.js";
 
-export const forgotPasswordController = async (
-  userId,
-  name,
-  email,
-  token,
-  verificationTokenType,
-  res
-) => {
+export const forgotPasswordController = async (req, res) => {
   try {
-    await forgotPasswordRepository(
-      userId,
-      name,
-      email,
-      token,
-      verificationTokenType,
-      res
-    );
+    await forgotPasswordRepository(req, res);
   } catch (error) {
     return res.status(500).json({
       error: error.message,

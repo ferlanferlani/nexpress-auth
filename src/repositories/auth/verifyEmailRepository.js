@@ -12,7 +12,7 @@ export const verifyEmailRepository = async (req, res) => {
 
     if (!verificationToken) {
       return res.status(400).send({
-        error: "Invalid Token",
+        error: "token invalid",
       });
     }
 
@@ -70,7 +70,6 @@ export const verifyEmailRepository = async (req, res) => {
     res.clearCookie("user");
     res.status(200).send("Email Verified");
   } catch (error) {
-    console.error("Error:", error);
     res.status(500).send("Internal Server Error");
   }
 };

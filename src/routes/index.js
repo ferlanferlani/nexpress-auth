@@ -29,6 +29,6 @@ router.use(userLogout);
 router.use(userRouter);
 
 router.get("/", (req, res) => {
-  res.send("Nexpress API");
+  res.sendFile("documentation/index.html", { root: "./" });
 });
 export default router;

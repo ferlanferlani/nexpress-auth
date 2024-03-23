@@ -1,17 +1,15 @@
 import nodemailer from "nodemailer";
 
-// import controller
-import { createTokenHelper } from "../../helpers/createTokenHelper.js";
 import { forgotPasswordController } from "../../controllers/auth/forgotPasswordController.js";
 
 export const sendEmailVerificationResetPasswordService = async (
   userId,
   name,
   email,
+  token,
   baseUrl,
   res
 ) => {
-  const token = createTokenHelper();
   const userName = name.replace(/\s+/g, "").toLowerCase();
   const verificationUrl = `${baseUrl}/auth/reset-password/${userName}/?token=${token}`;
 
@@ -29,21 +27,6 @@ export const sendEmailVerificationResetPasswordService = async (
     subject: "Nexpress API Email Verification",
     text: `Hallo ${name}! token akan expired dalam waktu 15 menit silahkan klik link berikut untuk reset password : ${verificationUrl}`,
   };
-  const verificationTokenType = "forgot-password";
-  try {
-    await forgotPasswordController(
-      userId,
-      name,
-      email,
-      token,
-      verificationTokenType,
-      res
-    );
-  } catch (error) {
-    return res.status(500).json({
-      error: error.message,
-    });
-  }
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {

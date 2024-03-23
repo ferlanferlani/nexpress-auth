@@ -46,9 +46,14 @@ export const sendEmailVerificationService = async (
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
+      return res.status(500).json({
+        error: error.message,
+      });
     } else {
-      console.log(info);
+      return res.status(200).json({
+        success: true,
+        message: "Email sent successfully",
+      });
     }
   });
 };

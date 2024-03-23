@@ -1,13 +1,8 @@
+import { createTokenHelper } from "../../helpers/createTokenHelper.js";
 import { sendEmailVerificationResetPasswordService } from "../../services/nodemailer/sendEmailVerificationResetPasswordService.js";
 import prisma from "../../services/prismaService.js";
-export const forgotPasswordRepository = async (
-  userId,
-  name,
-  email,
-  token,
-  verificationTokenType,
-  res
-) => {
+
+export const forgotPasswordRepository = async (req, res) => {
   try {
     const userEmailRequest = req.body.email;
 
@@ -24,18 +19,27 @@ export const forgotPasswordRepository = async (
       });
     }
 
+    const name = user.name;
+    const email = user.email;
+    const userId = user.id;
+
     const protocol = req.protocol;
     const hostname = req.hostname;
     const port = req.socket.localPort;
 
     const baseUrl = `${protocol}://${hostname}:${port}`;
 
+    // create token
+    const token = createTokenHelper();
+
     // token is expired on 45 minutes
     const currentDate = new Date();
     const expirationTime = new Date(currentDate.getTime() + 15 * 60000);
 
+    const verificationTokenType = "forgot-password";
+
     // make token for reset pssword
-    const tokenCreated = await prisma.verificationTokens.create({
+    await prisma.verificationTokens.create({
       data: {
         name: name,
         email: email,
@@ -49,18 +53,17 @@ export const forgotPasswordRepository = async (
         },
       },
     });
-    const sendEmailResponse = await sendEmailVerificationResetPasswordService(
+    await sendEmailVerificationResetPasswordService(
       userId,
       name,
       email,
+      token,
       baseUrl,
       res
     );
     res.status(200).json({
       success: true,
-      token: tokenCreated,
-      resposense: sendEmailResponse,
-      message: "Email sent successfully",
+      message: "email verification sent",
     });
   } catch (error) {
     return res.status(500).json({
