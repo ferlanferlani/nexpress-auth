@@ -126,4 +126,4 @@ if you have used this package and it is very useful and helpful to you, feel fre
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/ferlanferlani)
 
 **License**:
-This library is under MIT license.
+This project is under MIT license.
