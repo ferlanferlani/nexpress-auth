@@ -5,11 +5,19 @@ export const saveVerificationTokenController = async (
   name,
   email,
   token,
+  verificationTokenType,
   res
 ) => {
   try {
     // save verification token
-    await saveVerificationTokenRepository(userId, name, email, token, res);
+    await saveVerificationTokenRepository(
+      userId,
+      name,
+      email,
+      token,
+      verificationTokenType,
+      res
+    );
   } catch (error) {
     console.log(error);
   }

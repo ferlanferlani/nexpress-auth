@@ -26,13 +26,13 @@ model Users {
 }
 
 model VerificationTokens {
-  id      String   @id @default(auto()) @map("_id") @db.ObjectId
-  name    String
-  email   String   @unique
-  expired DateTime
-  token   String   @unique
-  userId  String   @db.ObjectId
-
-  createdAt DateTime @default(now())
-  user      Users    @relation(fields: [userId], references: [id])
+  id                    String   @id @default(auto()) @map("_id") @db.ObjectId
+  name                  String
+  email                 String   @unique
+  expired               DateTime
+  token                 String   @unique
+  verificationTokenType String?  @default("null")
+  userId                String   @db.ObjectId
+  createdAt             DateTime @default(now())
+  user                  Users    @relation(fields: [userId], references: [id])
 }

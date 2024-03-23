@@ -6,6 +6,8 @@ import verifyEmailRoute from "./auth/verifyEmailRoute.js";
 import resendVerificationEmailRoute from "./auth/resendVerificationEmailRoute.js";
 import signInRoute from "./auth/signInRoute.js";
 import refreshTokenRoute from "./auth/refreshTokenRoute.js";
+import forgotPasswordRoute from "./auth/forgotPasswordRoute.js";
+import resetPassworRoute from "./auth/resetPasswordRoute.js";
 
 // import user route
 import userRouter from "./user/userRoute.js";
@@ -16,6 +18,8 @@ const router = express.Router();
 // auth router
 router.use(signUpRoute);
 router.use(signInRoute);
+router.use(forgotPasswordRoute);
+router.use(resetPassworRoute);
 router.use(verifyEmailRoute);
 router.use(refreshTokenRoute);
 router.use(resendVerificationEmailRoute);

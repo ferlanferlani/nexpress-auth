@@ -1,7 +1,7 @@
 import prisma from "../../services/prismaService.js";
 
 export const verifyEmailRepository = async (req, res) => {
-    const tokenfromUrl = req.query.token;
+  const tokenfromUrl = req.query.token;
 
   try {
     const verificationToken = await prisma.verificationTokens.findFirst({
@@ -66,9 +66,9 @@ export const verifyEmailRepository = async (req, res) => {
       });
     }
 
-    res.status(200).send("Email Verified");
     // clear cookie
     res.clearCookie("user");
+    res.status(200).send("Email Verified");
   } catch (error) {
     console.error("Error:", error);
     res.status(500).send("Internal Server Error");

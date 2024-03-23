@@ -6,6 +6,7 @@ export const saveVerificationTokenRepository = async (
   name,
   email,
   token,
+  verificationTokenType,
   res
 ) => {
   // token is expired on 45 minutes
@@ -17,6 +18,7 @@ export const saveVerificationTokenRepository = async (
         name: name,
         email: email,
         token: token,
+        verificationTokenType: verificationTokenType,
         expired: expirationTime,
         user: {
           connect: {

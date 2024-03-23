@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { sendEmail } from "../../services/nodemailerService.js";
+import { sendEmailVerificationService } from "../../services/nodemailer/sendEmailVerificationSigninService.js";
 import prisma from "../../services/prismaService.js";
 
 export const resendEmailVerificationRepository = async (req, res) => {
@@ -47,7 +47,7 @@ export const resendEmailVerificationRepository = async (req, res) => {
       });
     }
 
-    await sendEmail(userId, name, email, baseUrl);
+    await sendEmailVerificationService(userId, name, email, baseUrl);
     res.status(200).json({
       success: true,
       message: "Email verification sent",

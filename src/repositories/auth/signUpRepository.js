@@ -5,7 +5,7 @@ import * as argon2 from "argon2";
 import { saveUserRepository } from "../../repositories/user/saveUserRepository.js";
 
 //** import services
-import { sendEmail } from "../../services/nodemailerService.js";
+import { sendEmailVerificationService } from "../../services/nodemailer/sendEmailVerificationSigninService.js";
 
 //**  user validation
 import { userValidation } from "../../validations/server/userValidation.js";
@@ -68,7 +68,13 @@ export const signUpRepostiory = async (req, res) => {
     /* Send Email Verification
      *ini adalah optional untuk anda, jika diperlukan hapus blok komentarnya
      */
-    await sendEmail(userId, userName, userEmail, baseUrl, res);
+    await sendEmailVerificationService(
+      userId,
+      userName,
+      userEmail,
+      baseUrl,
+      res
+    );
 
     res.status(201).json({
       sucess: true,
