@@ -66,7 +66,7 @@ export const signUpRepostiory = async (req, res) => {
     const userId = user.id;
 
     /* Send Email Verification
-     *ini adalah optional untuk anda, jika diperlukan hapus blok komentarnya
+     *
      */
     await sendEmailVerificationService(
       userId,

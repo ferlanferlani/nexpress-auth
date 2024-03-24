@@ -34,16 +34,9 @@ export const saveVerificationTokenRepository = async (
         name,
         email,
       },
-      process.env.USER_SIGNUP_TOKEN
+      process.env.USER_TOKEN
     );
-
     res.cookie("user", userToken, { httpOnly: true });
-
-    return res.status(200).json({
-      sucsess: true,
-      message: "verification token saved",
-      data: tokenSaved,
-    });
   } catch (error) {
     return res.status(500).json({
       error: error.message,

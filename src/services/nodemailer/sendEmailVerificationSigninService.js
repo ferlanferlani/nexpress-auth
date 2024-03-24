@@ -52,6 +52,7 @@ export const sendEmailVerificationService = async (
     } else {
       return res.status(200).json({
         success: true,
+        info: info,
         message: "Email sent successfully",
       });
     }

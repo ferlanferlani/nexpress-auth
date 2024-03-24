@@ -1,9 +1,6 @@
 import nodemailer from "nodemailer";
 
-import { forgotPasswordController } from "../../controllers/auth/forgotPasswordController.js";
-
 export const sendEmailVerificationResetPasswordService = async (
-  userId,
   name,
   email,
   token,
