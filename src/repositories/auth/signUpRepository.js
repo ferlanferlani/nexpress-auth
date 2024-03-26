@@ -20,7 +20,7 @@ import prisma from "../../services/prismaService.js";
 export const signUpRepostiory = async (req, res) => {
   const protocol = req.protocol;
   const hostname = req.hostname;
-  const port = req.socket.localPort;
+  const port = 3000;
 
   const baseUrl = `${protocol}://${hostname}:${port}`;
 
@@ -78,7 +78,8 @@ export const signUpRepostiory = async (req, res) => {
 
     res.status(201).json({
       sucess: true,
-      message: "user created successfully",
+      message:
+        "Registrasi berhasil, silahkan cek email Anda untuk melakukan verifikasi",
       data: userSaved,
     });
   } catch (error) {

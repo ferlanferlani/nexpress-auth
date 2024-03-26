@@ -15,7 +15,7 @@
   "main": "src/api/app.js",
   "type": "module",
   "scripts": {
-    "nexpress": "nodemon api/app.js"
+    "dev": "nodemon api/app.js"
   },
   "author": "Ferlan Ferlani",
   "license": "ISC",

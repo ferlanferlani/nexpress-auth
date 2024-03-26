@@ -3,6 +3,12 @@ import prisma from "../../services/prismaService.js";
 export const verifyEmailRepository = async (req, res) => {
   const tokenfromUrl = req.query.token;
 
+  if (req.method !== "GET") {
+    return res.status(400).json({
+      error: "Method not allowed",
+    });
+  }
+
   try {
     const verificationToken = await prisma.verificationTokens.findFirst({
       where: {
@@ -12,7 +18,7 @@ export const verifyEmailRepository = async (req, res) => {
 
     if (!verificationToken) {
       return res.status(400).send({
-        error: "token invalid",
+        error: "Token Invalid!",
       });
     }
 
@@ -68,7 +74,9 @@ export const verifyEmailRepository = async (req, res) => {
 
     // clear cookie
     res.clearCookie("user");
-    res.status(200).send("Email Verified");
+    res.status(200).send({
+      message: "Berhasil Diverifikasi",
+    });
   } catch (error) {
     res.status(500).send("Internal Server Error");
   }

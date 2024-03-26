@@ -10,7 +10,7 @@ export const userValidation = async (email) => {
   if (userAlreadyExists) {
     return {
       status: false,
-      errorMessage: "User already exists",
+      errorMessage: "Email ini sudah terdaftar!",
     };
   }
 
